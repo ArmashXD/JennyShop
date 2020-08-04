@@ -41,6 +41,7 @@ require('functions.php');
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
 </head>
 
 <body>
@@ -53,9 +54,11 @@ require('functions.php');
                         <select class="selectpicker usd_select">
                             <option>RS</option>
                         </select>
-                        <form action="search_ajax.php" method="GET">
+                        <form id="searchForm" action="search_ajax.php" method="GET">
                             <div class="input-group">
                                 <input type="text" class="form-control" onKeyUp="fx(this.value)" autocomplete="off" name="search" id="qu" class="textbox" placeholder="What are you looking for ?" tabindex="1" />
+                                <input type="hidden" type="submit" id="submit-btn" />
+
                             </div>
                             <div id="livesearch"></div>
                         </form>

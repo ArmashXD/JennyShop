@@ -40,6 +40,11 @@ function fx(str) {
 }
 //cart
 $(function () {
+  document
+    .getElementById("submit-btn")
+    .addEventListener("click", function (event) {
+      event.preventDefault();
+    });
   load_cart_data();
   $("#cart-popover").popover({
     html: true,
