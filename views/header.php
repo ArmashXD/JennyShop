@@ -1,4 +1,5 @@
 <?php
+ob_start();
 session_start();
 
 require('functions.php');
@@ -104,6 +105,13 @@ require('functions.php');
                                     </a>
                                 </li>
                             <?php endif; ?>
+                            <?php if (isset($_SESSION['admin_login'])) :
+                            ?>
+                                <li class="user">
+                                    <p class="lead"> Admin Logged In</p>
+                                </li>
+
+                            <?php endif; ?>
                             <li class="aside" id="cart-popover">
                                 <a><i class="icon-handbag icons"></i><span class="badge"></span>
                                 </a>
@@ -149,7 +157,7 @@ require('functions.php');
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="login.php"><?php isset($_SESSION['login']) ? print('Logged In') : print('LOGIN'); ?></a>
+                            <a class="nav-link" href="login.php"><?php isset($_SESSION['login']) || isset($_SESSION['admin_login']) ? print('') : print('LOGIN'); ?></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="contact.php">Contact</a>

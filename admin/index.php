@@ -1,4 +1,5 @@
 <?php
+ob_start();
 session_start();
 if (isset($_SESSION['admin_login'])) {
 	include('include/config.php');
@@ -91,6 +92,8 @@ if (isset($_SESSION['admin_login'])) {
 									$query = mysqli_query($connect, "SELECT * FROM orders_info");
 									while ($row = mysqli_fetch_array($query)) {
 										$output = '
+										<hr>
+				
 										<tr>
 											<td>' . $row['f_name'] . '</td>
 											<td>' . $row['email'] . '</td>
@@ -99,11 +102,13 @@ if (isset($_SESSION['admin_login'])) {
 											<td>' . $row['Start_Date'] . '</td>
 											<td>' . $row['Status'] . '</td>
 										</tr>
+										<hr>
 									';
 									}
 									return $output;
 								}
 								if (isset($_POST['create_pdf'])) {
+									ob_end_clean();
 									require('tcpdf_min/tcpdf.php');
 									$obj_pdf = new TCPDF('P', PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 									$obj_pdf->SetCreator(PDF_CREATOR);
@@ -124,14 +129,12 @@ if (isset($_SESSION['admin_login'])) {
 								<table cellpadding="0" cellspacing="0" border="0" class="datatable-1 table table-bordered table-striped	 display" width="100%">
 									<thead>
 										<tr>
-										<th>#</th>
 										<th> Name</th>
 										<th>Email </th>
 										<th>Shippping Address/City/State </th>
 										<th>Billing Address/Products/Quantity/Total Amount</th>
 										<th>Start Date</th>
 										<th>Status</th>
-										<th>Actions </th>
 
 										</tr>
 									</thead>
@@ -140,7 +143,8 @@ if (isset($_SESSION['admin_login'])) {
 									$content .= '</table>';
 									$obj_pdf->writeHTML($content);
 									$obj_pdf->Output('sample.pdf', 'I');
-								} ?>
+								}
+								?>
 								<div class="container">
 									<form method="post">
 										<input type="submit" name="create_pdf" class="btn btn-danger" value="Create PDF" />

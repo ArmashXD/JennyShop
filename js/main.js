@@ -39,7 +39,8 @@ function fx(str) {
   });
 }
 //cart
-$(function () {
+
+$(() => {
   document
     .getElementById("submit-btn")
     .addEventListener("click", function (event) {

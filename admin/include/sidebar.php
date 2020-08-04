@@ -64,7 +64,7 @@
 		<ul class="widget widget-menu unstyled">
 			<li><a href="insert-product.php"><i class="menu-icon icon-paste"></i>Insert Product </a></li>
 			<li><a href="manage-products.php"><i class="menu-icon icon-table"></i>Manage Products </a></li>
-			<li><a href="index.php"><i class="menu-icon icon-table"></i>Manage Data </a></li>
+			<li><a href="manage-top-sales.php"><i class="menu-icon icon-table"></i>Manage Top Sales </a></li>
 
 		</ul>
 		<!--/.widget-nav-->
