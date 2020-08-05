@@ -48,7 +48,6 @@ if (isset($_SESSION['admin_login'])) {
 									<table cellpadding="0" cellspacing="0" border="0" class="datatable-1 table table-bordered table-striped	 display" width="100%">
 										<thead>
 											<tr>
-												<th>#</th>
 												<th> Name</th>
 												<th>Email </th>
 												<th>Shippping Address/City/State </th>
@@ -66,7 +65,6 @@ if (isset($_SESSION['admin_login'])) {
 											while ($row = mysqli_fetch_array($query)) {
 											?>
 												<tr>
-													<td><?php echo htmlentities($cnt); ?></td>
 													<td><?php echo htmlentities($row['f_name']); ?></td>
 													<td><?php echo htmlentities($row['email']); ?></td>
 
