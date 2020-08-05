@@ -1,5 +1,5 @@
 <?php
-if (!isset($_SESSION['login'])) {
+if (isset($_SESSION['login'])) {
     echo "<script>window.location.href= 'index.php'</script>";
 }
 include('views/header.php');
