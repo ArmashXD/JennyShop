@@ -157,7 +157,7 @@ require('functions.php');
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="login.php"><?php isset($_SESSION['login']) || isset($_SESSION['admin_login']) ? print('') : print('LOGIN'); ?></a>
+                            <a class="nav-link" href="<?php isset($_SESSION['login']) || isset($_SESSION['admin_login']) ?  print('#') : print('login.php'); ?>"><?php isset($_SESSION['login']) || isset($_SESSION['admin_login']) ? print('LOGGED IN') : print('LOGIN'); ?></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="contact.php">Contact</a>
