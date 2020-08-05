@@ -48,7 +48,7 @@
                         </div>
 
                         <div class="tp-caption tp-resizeme third_btn" data-x="['right','right','right','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['top','top','top','top']" data-voffset="['385','385','385','385','350']" data-width="['450','450','450','auto','auto']" data-height="none" data-whitespace="nowrap" data-type="text" data-responsive_offset="on" data-frames='[{"delay":10,"speed":1500,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":1500,"frame":"999","to":"y:[175%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]' data-textAlign="['left','left','left','left','left','center']">
-                            <a class="checkout_btn" href="#">Check Store</a>
+                            <a class="checkout_btn" href="products.php">Check Store</a>
                         </div>
                     </div>
                 </li>
