@@ -58,8 +58,6 @@ require('functions.php');
                         <form id="searchForm" action="search_ajax.php" method="GET">
                             <div class="input-group">
                                 <input type="text" class="form-control" onKeyUp="fx(this.value)" autocomplete="off" name="search" id="qu" class="textbox" placeholder="What are you looking for ?" tabindex="1" />
-                                <input type="hidden" type="submit" id="submit-btn" />
-
                             </div>
                             <div id="livesearch"></div>
                         </form>

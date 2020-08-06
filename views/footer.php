@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-6">
                     <aside class="f_widget f_about_widget">
-                        <img src="img/logo.png" alt="" />
+                        <img src="img/logo.png" alt="" style="max-width: 100%;" />
                         <p>
                             Jenny Shop is a permium Shopping Website .
                         </p>

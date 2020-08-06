@@ -6,7 +6,8 @@
                     <div class="showing_fillter">
                         <div class="row m0">
                             <div class="first_fillter">
-                                <h4>Showing 6 out of 20</h4>
+                                <h4>Total Products: <b><?php echo $products->countTotalItems();
+                                                        ?></b></h4>
                             </div>
                         </div>
                     </div>

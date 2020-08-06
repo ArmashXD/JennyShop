@@ -51,34 +51,63 @@ class Products
     {
 
 
-        $select_query = "SELECT * FROM products WHERE product_title LIKE '$name'";
+        $select_query = "SELECT * FROM products WHERE product_title LIKE '$name%'";
         $sql = mysqli_query($this->db->con, $select_query) or die("Error" . mysqli_error($this->db->con));
         $s = "";
         while ($row = mysqli_fetch_array($sql)) {
             $s = $s . "
-    <a class='link-p-colr' href='_prod_details.php?item_id=" . $row['product_id'] . "'>
-    <div class='live-outer'>
-            <div class='live-im'>
-                <img src='img/product/" . $row['product_image'] . "'/>
-            </div>
-            <div class='live-product-det'>
-                <div class='live-product-name'>
-                    <p>" . $row['product_title'] . "</p>
+        <a class='link-p-colr' href='_prod_details.php?item_id=" . $row['product_id'] . "'>
+        <div class='live-outer'>
+                <div class='live-im'>
+                    <img src='img/product/" . $row['product_image'] . "'/>
                 </div>
-                <div class='live-product-price'>
-                    <div class='live-product-price-text'><p>Rs." . $row['product_price'] . "</p></div>
+                <div class='live-product-det'>
+                    <div class='live-product-name'>
+                        <p>" . $row['product_title'] . "</p>
+                    </div>
+                    <div class='live-product-price'>
+                        <div class='live-product-price-text'><p>Rs." . $row['product_price'] . "</p></div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </a>
+        </a>
     ";
         }
         echo $s;
     }
 
+    public function countTotalItems()
+    {
+        $query = "SELECT COUNT(*) FROM products";
+        $run_query = mysqli_query($this->db->con, $query);
+        $row = mysqli_fetch_array($run_query);
+        $total = $row['0'];
+
+        return $total;
+    }
+    public function count_cosmetics_items()
+    {
+        $query = "SELECT COUNT(*) FROM products WHERE product_cat = 2";
+        $run_query = mysqli_query($this->db->con, $query);
+        $row = mysqli_fetch_array($run_query);
+        $total = $row['0'];
+
+        return $total;
+    }
+
+    public function count_jewellery_items()
+    {
+        $query = "SELECT COUNT(*) FROM products WHERE product_cat = 1";
+        $run_query = mysqli_query($this->db->con, $query);
+        $row = mysqli_fetch_array($run_query);
+        $total = $row['0'];
+
+        return $total;
+    }
+
     // public function search_product_name($name)
     // {
-    //     $query = "SELECT * FROM products WHERE product_title LIKE '$name'";
+    //     $query = "SELECT * FROM products WHERE product_title LIKE '$name%'";
     //     $result = mysqli_query($this->db->con, $query);
 
     //     $resultArray = array();

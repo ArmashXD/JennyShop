@@ -63,7 +63,7 @@ include('include/config.php');
 												<td><?php echo htmlentities($row['product_price']); ?></td>
 												<td>
 													<a href="edit-product.php?product_Id=<?php echo $row["product_id"]; ?>"><i class="icon-edit"></i></a>
-													<a href="delete-product.php?product_Id=<?php echo $row["product_id"]; ?>" onClick="return confirm('Are you sure you want to delete?')"><i class="icon-remove-sign"></i></a>
+													<a href="delete-product.php?product_Id=<?php echo $row["product_id"]; ?>&file_name=<?php echo $row['product_image']; ?>" onClick="return confirm('Are you sure you want to delete?')"><i class="icon-remove-sign"></i></a>
 												</td>
 											</tr>
 										<?php $cnt = $cnt + 1;

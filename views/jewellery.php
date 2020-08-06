@@ -7,7 +7,8 @@
                     <div class="showing_fillter">
                         <div class="row m0">
                             <div class="first_fillter">
-                                <h4>Showing 1 to 12 of 30 total</h4>
+                                <h4>Total Jewellery: <b><?php echo $products->count_jewellery_items();
+                                                        ?></b></h4>
                             </div>
                         </div>
                     </div>

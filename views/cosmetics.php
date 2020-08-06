@@ -7,7 +7,8 @@
                     <div class="showing_fillter">
                         <div class="row m0">
                             <div class="first_fillter">
-                                <h4>Showing 1 to 12 of 30 total</h4>
+                                <h4>Total Cosmetics: <b><?php echo $products->count_cosmetics_items();
+                                                        ?></b></h4>
                             </div>
                         </div>
                     </div>
@@ -17,12 +18,12 @@
                             <?php
                             $product = $pagination->getDataCosmetics();
                             $pages = $pagination->get_pagination_number();
-
                             //calling data 
                             array_map(function ($item) use ($product) { ?>
                                 <div class="col-lg-4 col-sm-6">
                                     <div class="l_product_item">
                                         <div class="l_p_img">
+
                                             <a href="<?php printf('%s?item_id=%s', '_prod_details.php', $item['product_id']) ?>" name="productLink">
 
                                                 <img src="img/product/<?php echo $item['product_image'] ?? 'Unknown' ?>" alt="">
@@ -41,7 +42,7 @@
                                     </div>
                                 </div>
 
-                            <?php  }, $product) ?>
+                            <?php  }, $product); ?>
                         </div>
                         <nav aria-label="Page navigation example" class="pagination_area">
                             <ul class="pagination">
