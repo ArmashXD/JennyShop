@@ -35,11 +35,8 @@
                             <h3>Information</h3>
                         </div>
                         <ul>
-                            <li><a href="#">About us</a></li>
-                            <li><a href="#">Delivery information</a></li>
-                            <li><a href="#">Terms & Conditions</a></li>
-                            <li><a href="#">Help Center</a></li>
-                            <li><a href="#">Returns & Refunds</a></li>
+                            <li>Delivery information</li>
+                            <li>Terms & Conditions</li>
                         </ul>
                     </aside>
                 </div>
@@ -49,34 +46,21 @@
                             <h3>Customer Service</h3>
                         </div>
                         <ul>
-                            <li><a href="#">My account</a></li>
-                            <li><a href="#">Ordr History</a></li>
-                            <li><a href="#">Wish List</a></li>
-                            <li><a href="#">Newsletter</a></li>
-                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="<?php isset($_SESSION['login']) || isset($_SESSION['admin_login']) ? print("user_details.php") : print("login.php")   ?>"><?php isset($_SESSION['login']) || isset($_SESSION['admin_login']) ? print("Your Account") : print("Not Logged In")  ?></a></li>
+                            <li><a href="track.php">Ordr History</a></li>
+                            <li><a href="contact.php">Contact Us</a></li>
                         </ul>
                     </aside>
                 </div>
-                <div class="col-lg-2 col-md-4 col-6">
-                    <aside class="f_widget link_widget f_extra_widget">
-                        <div class="f_w_title">
-                            <h3>Extras</h3>
-                        </div>
-                        <ul>
-                            <li><a href="#">Brands</a></li>
-                            <li><a href="#">Gift Vouchers</a></li>
-                            <li><a href="#">Affiliates</a></li>
-                        </ul>
-                    </aside>
-                </div>
+
                 <div class="col-lg-2 col-md-4 col-6">
                     <aside class="f_widget link_widget f_account_widget">
                         <div class="f_w_title">
                             <h3>My Account</h3>
                         </div>
                         <ul>
-                            <li><a href="#">My account</a></li>
-                            <li><a href="#">Wish List</a></li>
+                            <li><a href="<?php isset($_SESSION['login']) || isset($_SESSION['admin_login']) ? print("user_details.php") : print("login.php")   ?>"><?php isset($_SESSION['login']) || isset($_SESSION['admin_login']) ? print("Your Account") : print("Not Logged In")  ?></a></li>
+
                         </ul>
                     </aside>
                 </div>
