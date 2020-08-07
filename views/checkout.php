@@ -1,4 +1,7 @@
 <?php
+if (empty($_SESSION['shopping_cart'])) {
+    echo "<script>window.location.href= 'index.php'</script>";
+}
 if (isset($_SESSION['login']) || isset($_SESSION['admin_login'])) {
 
     if (isset($_POST['checkout_btn_submit'])) {
@@ -55,11 +58,12 @@ if (isset($_SESSION['login']) || isset($_SESSION['admin_login'])) {
 
                         ?>
                 <?php endforeach;
-                endif; ?>
+                endif;
+                ?>
                 <li class="list-group-item d-flex justify-content-between">
                     <span>Total (Rs)</span>
                     <strong><?php $total = number_format($total_price, 2);
-                            echo $total;
+                            echo $total ?? 0;
                             $_SESSION['total_amount'] = $total;
                             $_SESSION['product_quantity'] = $item['product_quantity'];
                             ?> Rs</strong>
@@ -193,7 +197,11 @@ if (isset($_SESSION['login']) || isset($_SESSION['admin_login'])) {
                         </div>
                     </div>
                     <hr class="mb-4">
-                    <button class="add_cart_btn" name="checkout_btn_submit" type="submit">Continue to checkout</button>
+                    <?php if (empty($_SESSION['shopping_cart'])) { ?>
+                        <button class="add_cart_btn" name="checkout_btn_submit" type="submit">Cannot Checkout, Zero Item in your cart</button>
+                    <?php } else {
+                        print(' <button class="add_cart_btn" name="checkout_btn_submit" type="submit">Continue to checkout</button>');
+                    } ?>
                 </form>
             </div>
         </div>

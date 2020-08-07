@@ -1,7 +1,6 @@
 <?php
 ob_start();
 session_start();
-
 require('functions.php');
 ?>
 
@@ -181,7 +180,9 @@ require('functions.php');
             </a>');
             } else {
                 print('Login to checkout');
-            } ?>
+            }
+
+            ?>
 
             <a href="#" class="checkout_btn" id="clear_cart">
                 <span class="icon-trash"></span> Remove All

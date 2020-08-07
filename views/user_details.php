@@ -54,7 +54,7 @@
                         <div class="col-sm-6">
                             <br>
 
-                            <button type="submit" value="submit" class="btn update_btn form-control">Change Password</button> </div>
+                            <button type="submit" value="submit" class="btn update_btn form-control" data-toggle="modal" data-target="#examplePasswordChange">Change Password</button> </div>
                         <?php
                         //  }
                         //}
@@ -83,6 +83,7 @@
             echo "<script>alert('Some Error Occured !')</script>";
         }
     } ?>
+
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -121,17 +122,57 @@
                         </div>
 
                         <button type="submit" class="add_cart_btn" name="update_profile">Submit</button>
+                        <button type="button" class="add_cart_btn" data-dismiss="modal" style="float: right;">Close</button>
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="add_cart_btn" data-dismiss="modal">Close</button>
-                    <button type="button" class="add_cart_btn">Save changes</button>
                 </div>
             </div>
         </div>
     </div>
     <br /><br />
 
+    <?php if (isset($_POST['update_password'])) {
+        $user_id = $_SESSION['user_id'];
+        $name = htmlentities($_POST['password']);
+
+        $update = $user->change_password($user_id, $name);
+        if ($update) {
+            echo "<script>alert('Password Updated !')</script>";
+            echo "<script>window.href.location = 'user_details.php';</script>";
+        } else {
+            echo "<script>alert('Some Error Occured !')</script>";
+        }
+    } ?>
+    <div class="modal fade" id="examplePasswordChange" tabindex="-1" role="dialog" aria-labelledby="examplePasswordChange" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="examplePasswordChange">Change Your Password</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form method="POST">
+                        <div class="form-group">
+                            <label for="firstName">Previous Password</label>
+                            <input type="text" class="form-control" id="firstName" value="<?php echo  $_SESSION['user_password']; ?>" name="passsword" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">New Password</label>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                        </div>
+
+                        <button type="submit" class="add_cart_btn" name="update_password">Submit</button>
+                        <button type="button" class="add_cart_btn" data-dismiss="modal" style="float: right;">Close</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
     <hr />
     <br /><br />
 </div>

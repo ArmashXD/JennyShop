@@ -170,6 +170,19 @@
             return true;
         }
     }
+
+    function validdatePassword() {
+        var password = $('#password').val();
+        var cpassword = $('#cpassword').val();
+        console.log(password);
+        if (password != cpassword) {
+            swal('Passwords Did Not Match');
+            return false;
+        } else {
+            return true;
+        }
+
+    }
 </script>
 </body>
 

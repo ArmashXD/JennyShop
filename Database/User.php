@@ -36,6 +36,7 @@ class User
       $_SESSION['Mobile'] = $user_data['mobile'];
       $_SESSION['Address1'] = $user_data['address1'];
       $_SESSION['Address2'] = $user_data['address2'];
+      $_SESSION['user_password'] = $user_data['password'];
       return true;
     } else {
       return false;
@@ -154,7 +155,17 @@ class User
       return false;
     }
   }
-  public function change_password($user_id = null)
+  public function change_password($user_id = null, $password)
   {
+    $query = "UPDATE user_info SET password= '$password' WHERE user_Id = $user_id";
+
+    $result = mysqli_query($this->db->con, $query) or die(mysqli_error($this->db->con));
+
+    if ($result) {
+      $_SESSION['user_password'] = $password;
+      return true;
+    } else {
+      return false;
+    }
   }
 }

@@ -63,7 +63,7 @@ $(() => {
     });
   }
   //adding cart
-  $(".add_to_cart").click(function () {
+  $(".add_to_cart").click(() => {
     var product_id = $(this).attr("id");
     var product_name = $("#name" + product_id + "").val();
     var product_price = $("#price" + product_id + "").val();
@@ -91,7 +91,7 @@ $(() => {
     }
   });
   //deleting single cart item
-  $(document).on("click", ".delete", function () {
+  $(document).on("click", ".delete", () => {
     var product_id = $(this).attr("id");
     var action = "remove";
     swal({
@@ -118,7 +118,7 @@ $(() => {
     });
   });
   //clearing cart
-  $(document).on("click", "#clear_cart", function () {
+  $(document).on("click", "#clear_cart", () => {
     var action = "empty";
     $.ajax({
       url: "views/cart_action.php",
@@ -147,5 +147,3 @@ $(() => {
   //   return false;
   // }
 });
-
-//validations
