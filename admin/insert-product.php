@@ -148,7 +148,7 @@ if (isset($_SESSION['admin_login'])) {
 										<div class="control-group">
 											<label class="control-label" for="basicinput">Product Price </label>
 											<div class="controls">
-												<input type="text" name="productprice" placeholder="Enter Product Price" class="span8 tip" required>
+												<input type="number" name="productprice" placeholder="Enter Product Price" class="span8 tip" required>
 											</div>
 										</div>
 
