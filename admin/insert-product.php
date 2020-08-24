@@ -190,10 +190,6 @@ if (isset($_SESSION['admin_login'])) {
 								</div>
 							</div>
 
-
-
-
-
 						</div>
 						<!--/.content-->
 					</div>

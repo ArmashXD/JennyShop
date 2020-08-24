@@ -40,7 +40,7 @@ function fx(str) {
 }
 //cart
 
-$(() => {
+$(function () {
   load_cart_data();
   $("#cart-popover").popover({
     html: true,
@@ -63,7 +63,7 @@ $(() => {
     });
   }
   //adding cart
-  $(".add_to_cart").click(() => {
+  $(".add_to_cart").click(function () {
     var product_id = $(this).attr("id");
     var product_name = $("#name" + product_id + "").val();
     var product_price = $("#price" + product_id + "").val();
@@ -118,7 +118,7 @@ $(() => {
     });
   });
   //clearing cart
-  $(document).on("click", "#clear_cart", () => {
+  $(document).on("click", "#clear_cart", function () {
     var action = "empty";
     $.ajax({
       url: "views/cart_action.php",
