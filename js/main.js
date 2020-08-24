@@ -91,7 +91,7 @@ $(function () {
     }
   });
   //deleting single cart item
-  $(document).on("click", ".delete", () => {
+  $(document).on("click", ".delete", function () {
     var product_id = $(this).attr("id");
     var action = "remove";
     swal({
